@@ -1,102 +1,91 @@
-// array de perguntas
+// array de perguntas sobre Demon Slayer
 const perguntas = [
   // pergunta 0
   {
-    pergunta: "Qual é a função principal do JavaScript?",
-    respostas: [
-      "Manipular o design da página",
-      "Controlar o comportamento da página",
-      "Armazenar dados no servidor",
-    ],
-    correta: 1,
+    pergunta: "Qual é o nome do protagonista de Demon Slayer?",
+    respostas: ["Tanjiro Kamado", "Zenitsu Agatsuma", "Inosuke Hashibira"],
+    correta: 0,
   },
   // pergunta 1
   {
-    pergunta:
-      "Qual palavra-chave é usada para declarar uma variável em JavaScript?",
-    respostas: ["var", "variable", "vrb"],
+    pergunta: "Qual é o nome da irmã de Tanjiro, que se transforma em demônio?",
+    respostas: ["Nezuko Kamado", "Kanao Tsuyuri", "Shinobu Kocho"],
     correta: 0,
   },
   // pergunta 2
   {
-    pergunta: "Qual dos seguintes é um tipo de dado primitivo em JavaScript?",
-    respostas: ["Array", "Object", "Number"],
-    correta: 2,
+    pergunta: "Qual é a respiração principal de Tanjiro?",
+    respostas: [
+      "Respiração da Água",
+      "Respiração do Fogo",
+      "Respiração do Trovão",
+    ],
+    correta: 0,
   },
   // pergunta 3
   {
-    pergunta: "O que é uma função em JavaScript?",
-    respostas: [
-      "Um objeto",
-      "Um bloco de construção fundamental",
-      "Um comentário",
-    ],
-    correta: 1,
+    pergunta: "Quem é o Hashira das Serpentes em Demon Slayer?",
+    respostas: ["Mitsuri Kanroji", "Muichiro Tokito", "Tengen Uzui"],
+    correta: 2,
   },
   // pergunta 4
   {
-    pergunta: "Qual operador é usado para concatenar strings em JavaScript?",
-    respostas: ["+", "*", "-"],
-    correta: 0,
+    pergunta: "Qual é a arma principal de Zenitsu Agatsuma?",
+    respostas: ["Katana", "Espada Nichirin", "Espada Eletrificada"],
+    correta: 2,
   },
   // pergunta 5
   {
-    pergunta: "O que é um loop 'for' usado para?",
-    respostas: [
-      "Criar condições",
-      "Executar um bloco de código repetidamente",
-      "Definir funções",
-    ],
-    correta: 1,
+    pergunta: "O que representa a marca na testa de Tanjiro?",
+    respostas: ["Marca de Demônio", "Marca de Proteção", "Marca de Respiração"],
+    correta: 2,
   },
   // pergunta 6
   {
-    pergunta:
-      "Qual método é usado para adicionar um elemento ao final de um array?",
-    respostas: ["push()", "append()", "addToEnd()"],
+    pergunta: "Quem é o Hashira das Borboletas em Demon Slayer?",
+    respostas: ["Shinobu Kocho", "Kanao Tsuyuri", "Mitsuri Kanroji"],
     correta: 0,
   },
   // pergunta 7
   {
-    pergunta: "O que é 'NaN' em JavaScript?",
-    respostas: ["Não é nada", "Número negativo", "Not a Number"],
-    correta: 2,
+    pergunta: "Qual é o nome do mentor de Tanjiro, que é um Hashira?",
+    respostas: ["Giyu Tomioka", "Kyojuro Rengoku", "Sanemi Shinazugawa"],
+    correta: 0,
   },
   // pergunta 8
   {
-    pergunta: "O que é 'DOM' em JavaScript?",
+    pergunta: "Qual é o nome da técnica de respiração de Inosuke Hashibira?",
     respostas: [
-      "Diretório de Operações Móveis",
-      "Documento de Objeto Móvel",
-      "Modelo de Objeto de Documento",
+      "Respiração da Besta",
+      "Respiração do Trovão",
+      "Respiração do Fogo",
     ],
-    correta: 2,
+    correta: 0,
   },
   // pergunta 9
   {
-    pergunta:
-      "Qual é o método usado para imprimir algo no console em JavaScript?",
-    respostas: ["console.out()", "log.print()", "console.log()"],
+    pergunta: "Quem é o Hashira das Chamas em Demon Slayer?",
+    respostas: ["Sanemi Shinazugawa", "Gyomei Himejima", "Kyojuro Rengoku"],
     correta: 2,
   },
 ];
 
-//selecionando elementos html
+// selecionando elementos html
 const quiz = document.querySelector("#quiz");
 const template = document.querySelector("template");
 
 // laço de repetição para criar o quiz dinamicamente a partir do js
 for (const item of perguntas) {
-  //para cada item de perguntas
-  const quizItem = template.content.cloneNode(true); //irá clonar cada item (filhos) do nó principal (<template>) --> copia
-  quizItem.querySelector("h3").textContent = item.pergunta; //mostrando cada pergunta na tela
+  // para cada item de perguntas
+  const quizItem = template.content.cloneNode(true); // irá clonar cada item (filhos) do nó principal (<template>) --> copia
+  quizItem.querySelector("h3").textContent = item.pergunta; // mostrando cada pergunta na tela
 
   for (let reposta of item.respostas) {
-    //atribuindo a resposta cada item do sub array de respostas
-    const dt = quizItem.querySelector("dl dt").cloneNode(true); //clocando os nós de <dt>
+    // atribuindo a resposta cada item do sub array de respostas
+    const dt = quizItem.querySelector("dl dt").cloneNode(true); // clonando os nós de <dt>
     dt.querySelector("span").textContent = reposta;
 
-    quizItem.querySelector("dl").appendChild(dt); //mostrando cada resposta da pergunta --> mostrando cada reposta do array[item]
+    quizItem.querySelector("dl").appendChild(dt); // mostrando cada resposta da pergunta --> mostrando cada reposta do array[item]
   }
   quizItem.querySelector("dl dt").remove(); // removendo primeiro item do quiz --> modelo de resposta usado ('Resposta A')
 
