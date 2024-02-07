@@ -4,7 +4,7 @@ O Demon Slayer Quiz é uma aplicação web que oferece um quiz interativo sobre 
 
 Este projeto faz parte da Trilha de **HTML + CSS + JavaScript** no evento NLW Expert da RocketSeat, originalmente voltado para perguntas sobre JavaScript e adaptado para o universo de Demon Slayer.
 
-Link de acesso: [Demon Slayer Quiz](https://seu-usuario.github.io/seu-repositorio/)
+Link de acesso: [Demon Slayer Quiz](https://emilaynerodrigues.github.io/demon-slayer-quiz/)
 
 ## Funcionalidades Principais
 
